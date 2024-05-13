@@ -16,5 +16,12 @@ public:
 	static void getNim(int pNim) { nim = pNim; }
 	static int getNim() { return nim; }
 
-	mahasiswa(string pnama)
+	mahasiswa(string pnama) : nama(pnama) { setID(); }
 };
+
+int mahasiswa::nim = 20230140111;
+
+void mahasiswa::setID()
+{
+	id = ++nim;
+}
