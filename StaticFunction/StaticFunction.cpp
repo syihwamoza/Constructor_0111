@@ -6,5 +6,15 @@ class mahasiswa
 {
 private:
 	static int nim;
+public:
+	int id;
+	string nama;
 
+	void setID();
+	void prinAll();
+
+	static void getNim(int pNim) { nim = pNim; }
+	static int getNim() { return nim; }
+
+	mahasiswa(string pnama)
 };
