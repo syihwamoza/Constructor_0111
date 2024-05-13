@@ -13,7 +13,7 @@ public:
 	void setID();
 	void printAll();
 
-	static void getNim(int pNim) { nim = pNim; }
+	static void setNim(int pNim) { nim = pNim; }
 	static int getNim() { return nim; }
 
 	mahasiswa(string pnama)
@@ -43,4 +43,15 @@ int main()
 	mahasiswa mhs1("Moza Kastella");
 	mahasiswa mhs2("Dara");
 	mahasiswa::setNim(9);
+	mahasiswa mhs3("Nisa");
+	mahasiswa mhs4("Kia Khansa");
+
+	mhs1.printAll();
+	mhs2.printAll();
+	mhs3.printAll();
+	mhs4.printAll();
+
+	cout << "akses dari luar object = " << mahasiswa::getNim() << endl;
+
+	return 0;
 }
