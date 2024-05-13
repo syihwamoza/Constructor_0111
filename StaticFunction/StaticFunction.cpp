@@ -5,23 +5,42 @@ using namespace std;
 class mahasiswa
 {
 private:
-	static int nim;
+	long long static int nim;
 public:
-	int id;
+	long long int id;
 	string nama;
 
 	void setID();
-	void prinAll();
+	void printAll();
 
 	static void getNim(int pNim) { nim = pNim; }
 	static int getNim() { return nim; }
 
-	mahasiswa(string pnama) : nama(pnama) { setID(); }
+	mahasiswa(string pnama)
+	{
+		nama = pnama;
+		setID();
+	}
 };
 
-int mahasiswa::nim = 20230140111;
+long long int mahasiswa::nim = 20230140111;
 
 void mahasiswa::setID()
 {
 	id = ++nim;
+}
+
+void mahasiswa::printAll()
+{
+	cout << "ID = " << id << endl;
+	cout << "Nama = " << nama << endl;
+	cout << endl;
+
+}
+
+int main()
+{
+	mahasiswa mhs1("Moza Kastella");
+	mahasiswa mhs2("Dara");
+	mahasiswa::setNim(9);
 }
