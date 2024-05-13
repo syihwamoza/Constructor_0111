@@ -1,16 +1,19 @@
 #include <iostream>
 using namespace std;
 
-class angka {
+class angka
+{
 private:
-	int *arr
+	int* arr
 	int panjang;
 public:
 	angka(int);
 	~angka();
+
 	void cetakData();
-	void isiData;
+	void isiData();
 };
+
 angka::angka(int i) {
 	panjang = i;
 	arr = new int[i];
@@ -18,5 +21,29 @@ angka::angka(int i) {
 }
 
 angka ::~angka() {
-
+	cout << endl;
+	cetakData();
+	delete[]arr;
+	cout << "Alamat Array Sudah Dilepaskan " << endl;
 }
+
+void angka::cetakData() {
+	for (int i = 1; i <= panjang; i++) {
+		cout << i <<" = " << arr[i] << endl;
+	}
+}
+
+void angka::isiData() {
+	for (int i = 1; i <= panjang; i++) {
+		cout << i << " = "; cin >> arr[i];
+	}
+	cout << endl;
+}
+
+int main() {
+	angka belajaracpp(3);
+	angka* ptrBelajarcpp = new angka(5);
+	delete ptrBelajarcpp;
+
+	return 0;
+};
